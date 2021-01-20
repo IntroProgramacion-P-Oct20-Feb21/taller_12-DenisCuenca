@@ -1,21 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ejercicios;
 
-/**
- *
- * @author reroes
- */
+
 public class Problema02 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
+    public static void main(String[] args) {
+        double[][] datos = {{10, 2, 3}, {1, 5, 8}, {6, 2, 3}, {7, 8, 1}};
+        //double[] d = new double[4];
+        for (int i = 0; i < 4; i++) {
+            System.out.println( denis(datos[i], 3));
+        }
+        
+    }
+    public static double denis(double[] arreglo, int tamanio) {
+        if (tamanio == 1) {
+            return arreglo[0];
+        }else{
+           return arreglo[tamanio - 1] + denis(arreglo, tamanio-1);
+        }               
+    }
 }
