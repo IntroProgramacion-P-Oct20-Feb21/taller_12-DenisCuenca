@@ -1,21 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ejercicios;
 
-/**
- *
- * @author reroes
- */
-public class Problema01 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Problema01 {
     
+
+    public static void main(String[] args) {
+        double[][] datos = {{10, 2}, {1, 5}, {6, 2}, {7, 8}};
+        double[][] resultado = new double[4][2];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 2; j++) {
+                resultado[i][j] = res(datos[i][j]);
+            }
+        }
+        for (int i = 0; i < 4; i++) {
+
+            for (int j = 0; j < 2; j++) {
+
+                System.out.println(resultado[i][j]);
+            }
+        }
+    }
+
+    public static double res(double d) {
+        if (d <= 1) {
+            return 1;
+        } else {
+            return d * res(d - 1);
+        }
+    }
 }
